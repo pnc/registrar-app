@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1158,792" id="studentClasses" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D31303030204353433132324C616231504E432F7063616C76696E">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Person" location="375,30" size="452,175" id="studentClasses/Person" runTimeClassModel="lastName,address,Person(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),state,firstName,Person(),city">
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="address" id="studentClasses/Person#address"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="city" id="studentClasses/Person#city"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="firstName" id="studentClasses/Person#firstName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lastName" id="studentClasses/Person#lastName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="state" id="studentClasses/Person#state"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="429,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Person" id="studentClasses/Person#Person()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Person" id="studentClasses/Person#Person(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.3/@sourceConnections.0" name="AbstractStudent" location="210,285" size="716,139" id="studentClasses/AbstractStudent" runTimeClassModel="AbstractStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JID),studentID,gpa,AbstractStudent(),hoursTaken">
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="gpa" id="studentClasses/AbstractStudent#gpa"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hoursTaken" id="studentClasses/AbstractStudent#hoursTaken"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="studentID" id="studentClasses/AbstractStudent#studentID"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="693,36">
+      <children xsi:type="editmodel:MethodEditModel" name="AbstractStudent" id="studentClasses/AbstractStudent#AbstractStudent()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="AbstractStudent" id="studentClasses/AbstractStudent#AbstractStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JID)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="studentClasses/Person&lt;-studentClasses/AbstractStudent" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="390,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="225,175"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="UndergraduateStudent" location="330,480" size="808,103" id="studentClasses/UndergraduateStudent" runTimeClassModel="UndergraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDLjava.lang.String;),year,UndergraduateStudent()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="75,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="year" id="studentClasses/UndergraduateStudent#year"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="785,36">
+      <children xsi:type="editmodel:MethodEditModel" name="UndergraduateStudent" id="studentClasses/UndergraduateStudent#UndergraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDLjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="UndergraduateStudent" id="studentClasses/UndergraduateStudent#UndergraduateStudent()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="studentClasses/AbstractStudent&lt;-studentClasses/UndergraduateStudent" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="297,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="417,139"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GraduateStudent" location="105,540" size="882,121" id="studentClasses/GraduateStudent" runTimeClassModel="GraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDILjava.lang.String;),degree,GraduateStudent(),yearsEnrolled">
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="degree" id="studentClasses/GraduateStudent#degree"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yearsEnrolled" id="studentClasses/GraduateStudent#yearsEnrolled"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="859,36">
+      <children xsi:type="editmodel:MethodEditModel" name="GraduateStudent" id="studentClasses/GraduateStudent#GraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDILjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="GraduateStudent" id="studentClasses/GraduateStudent#GraduateStudent()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="studentClasses/AbstractStudent&lt;-studentClasses/GraduateStudent" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="462,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="357,139"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

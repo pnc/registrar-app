@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Dependencies" size="2748,1488" id="." metadata="uml2-1.0" initialized="true" scrolledX="354" scrolledY="32" tag="1000" key="32303037303533312D31303030204353433132324C616231504E432F7063616C76696E">
+  <children xsi:type="editmodel:PackageEditModel" name="studentClasses" location="25,37" size="1181,1309" id="studentClasses">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.2/@sourceConnections.0 //@children.0/@children.3/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.0" name="AbstractStudent" location="219,506" size="716,283" id="studentClasses/AbstractStudent" runTimeClassModel="AbstractStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JID),gpa,getHoursTaken(),AbstractStudent(Ljava.util.StringTokenizer;),hoursTaken,getGpa(),toString(),studentID,setGpa(D),setHoursTaken(I),setStudentID(J),getStudentID(),AbstractStudent()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="93,54">
+        <children xsi:type="editmodel:AttributeEditModel" name="gpa" id="studentClasses/AbstractStudent#gpa"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="hoursTaken" id="studentClasses/AbstractStudent#hoursTaken"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="studentID" id="studentClasses/AbstractStudent#studentID"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="693,180">
+        <children xsi:type="editmodel:MethodEditModel" name="AbstractStudent" id="studentClasses/AbstractStudent#AbstractStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JID)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="AbstractStudent" id="studentClasses/AbstractStudent#AbstractStudent()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getGpa" id="studentClasses/AbstractStudent#getGpa()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getHoursTaken" id="studentClasses/AbstractStudent#getHoursTaken()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getStudentID" id="studentClasses/AbstractStudent#getStudentID()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setGpa" id="studentClasses/AbstractStudent#setGpa(D)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setHoursTaken" id="studentClasses/AbstractStudent#setHoursTaken(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setStudentID" id="studentClasses/AbstractStudent#setStudentID(J)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="AbstractStudent" id="studentClasses/AbstractStudent#AbstractStudent(Ljava.util.StringTokenizer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="toString" id="studentClasses/AbstractStudent#toString()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="studentClasses/AbstractStudent->Standard::Derive" source="//@children.0/@children.0" target="//@children.0/@children.1" targetEnd="//@children.0/@children.0/@sourceConnections.0/@children.2" label="//@children.0/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Derive, Instantiate»" size="98,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="330,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="225,391"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.0/@sourceConnections.0" name="Person" location="324,58" size="452,391" id="studentClasses/Person" runTimeClassModel="lastName,setAddress(Ljava.lang.String;),getFirstName(),Person(Ljava.util.StringTokenizer;),getState(),Person(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),state,getAddress(),getLastName(),setLastName(Ljava.lang.String;),getCity(),setCity(Ljava.lang.String;),toString(),city,setFirstName(Ljava.lang.String;),setState(Ljava.lang.String;),address,firstName,Person()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
+        <children xsi:type="editmodel:AttributeEditModel" name="address" id="studentClasses/Person#address"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="city" id="studentClasses/Person#city"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="firstName" id="studentClasses/Person#firstName"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="lastName" id="studentClasses/Person#lastName"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="state" id="studentClasses/Person#state"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="429,252">
+        <children xsi:type="editmodel:MethodEditModel" name="Person" id="studentClasses/Person#Person(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Person" id="studentClasses/Person#Person()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getAddress" id="studentClasses/Person#getAddress()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getCity" id="studentClasses/Person#getCity()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getFirstName" id="studentClasses/Person#getFirstName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getLastName" id="studentClasses/Person#getLastName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getState" id="studentClasses/Person#getState()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setAddress" id="studentClasses/Person#setAddress(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setCity" id="studentClasses/Person#setCity(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setFirstName" id="studentClasses/Person#setFirstName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setLastName" id="studentClasses/Person#setLastName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setState" id="studentClasses/Person#setState(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Person" id="studentClasses/Person#Person(Ljava.util.StringTokenizer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="toString" id="studentClasses/Person#toString()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.2" name="UndergraduateStudent" location="162,1113" size="808,175" id="studentClasses/UndergraduateStudent" runTimeClassModel="UndergraduateStudent(Ljava.util.StringTokenizer;),UndergraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDLjava.lang.String;),getYear(),setYear(Ljava.lang.String;),year,UndergraduateStudent(),toString()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="75,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="year" id="studentClasses/UndergraduateStudent#year"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="785,108">
+        <children xsi:type="editmodel:MethodEditModel" name="UndergraduateStudent" id="studentClasses/UndergraduateStudent#UndergraduateStudent()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="UndergraduateStudent" id="studentClasses/UndergraduateStudent#UndergraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDLjava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getYear" id="studentClasses/UndergraduateStudent#getYear()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setYear" id="studentClasses/UndergraduateStudent#setYear(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="UndergraduateStudent" id="studentClasses/UndergraduateStudent#UndergraduateStudent(Ljava.util.StringTokenizer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="toString" id="studentClasses/UndergraduateStudent#toString()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="studentClasses/UndergraduateStudent->Standard::Derive" source="//@children.0/@children.2" target="//@children.0/@children.0" targetEnd="//@children.0/@children.2/@sourceConnections.0/@children.2" label="//@children.0/@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Derive, Instantiate»" size="98,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="414,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="357,283"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.1" name="GraduateStudent" location="283,853" size="882,229" id="studentClasses/GraduateStudent" runTimeClassModel="GraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDILjava.lang.String;),getYearsEnrolled(),getDegree(),degree,GraduateStudent(),setYearsEnrolled(I),yearsEnrolled,GraduateStudent(Ljava.util.StringTokenizer;),toString(),setDegree(Ljava.lang.String;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="102,36">
+        <children xsi:type="editmodel:AttributeEditModel" name="degree" id="studentClasses/GraduateStudent#degree"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="yearsEnrolled" id="studentClasses/GraduateStudent#yearsEnrolled"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="859,144">
+        <children xsi:type="editmodel:MethodEditModel" name="GraduateStudent" id="studentClasses/GraduateStudent#GraduateStudent(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;JIDILjava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="GraduateStudent" id="studentClasses/GraduateStudent#GraduateStudent(Ljava.util.StringTokenizer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="GraduateStudent" id="studentClasses/GraduateStudent#GraduateStudent()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getDegree" id="studentClasses/GraduateStudent#getDegree()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getYearsEnrolled" id="studentClasses/GraduateStudent#getYearsEnrolled()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setDegree" id="studentClasses/GraduateStudent#setDegree(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setYearsEnrolled" id="studentClasses/GraduateStudent#setYearsEnrolled(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="toString" id="studentClasses/GraduateStudent#toString()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="studentClasses/GraduateStudent->Standard::Derive" source="//@children.0/@children.3" target="//@children.0/@children.0" targetEnd="//@children.0/@children.3/@sourceConnections.0/@children.2" label="//@children.0/@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Derive, Instantiate»" size="98,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="325,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="389,283"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+    </children>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" name="applicationClasses" location="1325,20" size="299,288" id="applicationClasses">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.1/@sourceConnections.0" name="StudentDatabase" location="30,36" size="253,175" id="applicationClasses/StudentDatabase" runTimeClassModel="students,getStudents(),setStudents(Ljava.util.ArrayList;),saveToFile(Ljava.lang.String;),StudentDatabase(Ljava.util.ArrayList;),toString(),readFromFile(Ljava.lang.String;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="203,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="students" id="applicationClasses/StudentDatabase#students"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="230,108">
+        <children xsi:type="editmodel:MethodEditModel" name="StudentDatabase" id="applicationClasses/StudentDatabase#StudentDatabase(Ljava.util.ArrayList;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getStudents" id="applicationClasses/StudentDatabase#getStudents()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="readFromFile" id="applicationClasses/StudentDatabase#readFromFile(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="saveToFile" id="applicationClasses/StudentDatabase#saveToFile(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setStudents" id="applicationClasses/StudentDatabase#setStudents(Ljava.util.ArrayList;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="toString" id="applicationClasses/StudentDatabase#toString()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="applicationClasses/StudentDatabase->Soyatec::Import" source="//@children.1/@children.0" target="//@children.0/@children.0" targetEnd="//@children.1/@children.0/@sourceConnections.0/@children.2" label="//@children.1/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,165" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="587,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="applicationClasses/StudentDatabase-Standard::Instantiate->studentClasses/GraduateStudent" source="//@children.1/@children.0" target="//@children.0/@children.3" targetEnd="//@children.1/@children.0/@sourceConnections.1/@children.2" label="//@children.1/@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="51,175" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="538,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="applicationClasses/StudentDatabase-Standard::Instantiate->studentClasses/UndergraduateStudent" source="//@children.1/@children.0" target="//@children.0/@children.2" targetEnd="//@children.1/@children.0/@sourceConnections.2/@children.2" label="//@children.1/@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="54,175" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="475,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="RegistrarApp" location="53,155" size="208,103" id="applicationClasses/RegistrarApp" runTimeClassModel="openDatabase(Ljava.lang.String;),getMyDatabase(),myDatabase,saveDatabase(Ljava.lang.String;),setMyDatabase(LapplicationClasses.StudentDatabase;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="168,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="myDatabase" id="applicationClasses/RegistrarApp#database"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="185,36">
+        <children xsi:type="editmodel:MethodEditModel" name="openDatabase" id="applicationClasses/RegistrarApp#openDatabase(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="saveDatabase" id="applicationClasses/RegistrarApp#saveDatabase(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="applicationClasses/RegistrarApp->Soyatec::Import" source="//@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.1/@children.1/@sourceConnections.0/@children.2" label="//@children.1/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Import»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+    </children>
+    <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=4;Product=eUML2;displayOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

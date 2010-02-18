@@ -1,0 +1,7 @@
+UG	Board	Bill	125 OakStreet	Oakland	CA	111223333	12	3.150	Freshman
+UG	Dupp	Stan	24 PointPleasantWay	Ripley	OH	333221111	8	3.750	Senior
+UG	Kat	Allie	15 Murray Ave	Gainesville	FL	444556666	36	3.125	Senior
+UG	Canusee	Jose	1421 Byron St	Wheaton	MD	666554444	18	3.250	Sophomore
+GR	Jordan	Crossing	231 Atlantis Av	Portland	OR	367554334	18	3.250	5	PhD
+UG	Dover	Ben	1807 Cornell Ave	Richmond	VA	777889999	16	2.500	Junior
+GR	Ringing	Isabelle	2255 Poinsett St	Greenville	SC	999887777	16	3.800	1	MS
