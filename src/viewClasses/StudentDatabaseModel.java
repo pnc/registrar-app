@@ -4,6 +4,7 @@
 package viewClasses;
 
 import java.lang.reflect.Method;
+import java.util.Iterator;
 
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -27,8 +28,11 @@ public class StudentDatabaseModel
 	 * An ID for serialization purposes.
 	 */
 	private static final long serialVersionUID = 1L;
-	private String[] columnNames  = {"ID Number", "First Name",	"Last Name", "City"};
-	private String[] fieldNames = {	 "StudentID", "FirstName",	"LastName", "City"};
+	private String[] columnNames  = {"ID Number", "Type", "First Name",	"Last Name", 
+		"Address", "City", "State", "Credit Hours", "GPA", "Degree", "Years Enrolled"};
+		
+	private String[] fieldNames = {	 "StudentID", "Type", "FirstName",	"LastName", 
+		"Address", "City", "State", "HoursTaken", "Gpa", "Degree", "YearsEnrolled"};
 	
 	private StudentDatabase studentDatabase = null;
 	
@@ -59,6 +63,13 @@ public class StudentDatabaseModel
 			// Stop listening to the old database
 			if (this.studentDatabase != null) {
 				this.studentDatabase.removeChangeListener(this);
+				
+				// Stop listening to the students in the database
+				Iterator<AbstractStudent> iterator = this.studentDatabase.getStudents().iterator();
+				while ( iterator.hasNext() ) {
+					AbstractStudent student = iterator.next();
+					student.removeChangeListener(this);
+				}
 			}
 			
 			// Change our database reference
@@ -66,6 +77,13 @@ public class StudentDatabaseModel
 			
 			// Begin listening to the new database
 			this.studentDatabase.addChangeListener(this);
+			
+			// Begin listening to the students in the database
+			Iterator<AbstractStudent> iterator = this.studentDatabase.getStudents().iterator();
+			while ( iterator.hasNext() ) {
+				AbstractStudent student = iterator.next();
+				student.addChangeListener(this);
+			}
 			
 			// Trigger a change event so anyone using us updates
 			this.fireTableDataChanged();

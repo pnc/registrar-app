@@ -43,6 +43,7 @@ public class EventSource {
 	
 	/**
 	 * Notifies listeners that something has changed.
+	 * This can be triggered by the object itself.
 	 */
 	@SuppressWarnings({ "unchecked" })
 	protected void notifyListeners() {
@@ -55,7 +56,14 @@ public class EventSource {
 			ChangeListener listener = enum1.nextElement();
 			listener.stateChanged(event);
 		}
-	}  
+	}
+	
+	/**
+	 * Notifies listeners, but can be triggered by anyone.
+	 */
+	public void update() {
+		notifyListeners();
+	}
 	
 	/**
 	 * An attribute that holds the observers interested in receiving

@@ -3,6 +3,8 @@ package studentClasses;
 import java.io.Serializable;
 import java.util.StringTokenizer;
 
+import com.phillipcalvin.utilities.EventSource;
+
 /**
  * purpose: Models a person, having a first and last name, a street address
  * and its components, city and state.

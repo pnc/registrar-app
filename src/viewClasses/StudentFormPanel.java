@@ -1,7 +1,7 @@
 package viewClasses;
 
-import guiObservers.UndergraduateStudentEvent;
-import guiObservers.UndergraduateStudentListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import javax.swing.JPanel;
 import java.awt.GridLayout;
@@ -12,6 +12,7 @@ import javax.swing.BorderFactory;
 import java.awt.ComponentOrientation;
 
 import javax.swing.SwingConstants;
+import java.awt.Component;
 
 import studentClasses.*;
 import javax.swing.JButton;
@@ -20,13 +21,13 @@ import studentClasses.*;
 
 /**
  * purpose: Provides an interface for editing the 
- * properties of an <tt>UndergraduateStudent</tt>.
+ * properties of an <tt>AbstractStudent</tt>.
  * @author Phillip Calvin
  * @version 2/3/2010
  */
 public class StudentFormPanel
 	extends JPanel 
-	implements UndergraduateStudentListener {
+	implements ChangeListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel labelStudentID = null;
@@ -34,11 +35,9 @@ public class StudentFormPanel
 	private JLabel labelLastName = null;
 	private JTextField fieldLastName = null;
 	private JTextField fieldFirstName = null;
-	private JTextField fieldYear = null;
 	private JTextField fieldGpa = null;
 	private JTextField fieldHoursTaken = null;
 	private JLabel labelHoursTaken = null;
-	private JLabel labelYear = null;
 	private JLabel labelGpa = null;
 	private JLabel labelFirstName = null;
 	private JLabel labelAddress = null;
@@ -48,7 +47,9 @@ public class StudentFormPanel
 	private JTextField fieldCity = null;
 	private JTextField fieldState = null;
 	
-	private UndergraduateStudent student = null;
+	protected JTextField fieldYear = null;
+	
+	protected AbstractStudent student = null;
 	private JButton buttonSave = null;
 	private JLabel fillerLabel = null;
 	
@@ -65,19 +66,23 @@ public class StudentFormPanel
 	 * with a reference to the student being edited.
 	 * @param student The student being edited.
 	 */
-	public StudentFormPanel(UndergraduateStudent student) {
+	public StudentFormPanel(AbstractStudent student) {
 		super();
 		initialize();
+		addButton();
+		
+		setRecursiveEnabled(false);
+		
 		this.student = student;
 	}
 
 
 	/**
-	 * This method initializes this
+	 * This method initializes this panel.
 	 * 
 	 * @return void
 	 */
-	private void initialize() {
+	protected void initialize() {
 		fillerLabel = new JLabel();
 		fillerLabel.setText("");
 		labelState = new JLabel();
@@ -95,9 +100,6 @@ public class StudentFormPanel
 		labelGpa = new JLabel();
 		labelGpa.setText("GPA:");
 		labelGpa.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelYear = new JLabel();
-		labelYear.setText("Year:");
-		labelYear.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelHoursTaken = new JLabel();
 		labelHoursTaken.setText("Credit hours:");
 		labelHoursTaken.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -131,10 +133,13 @@ public class StudentFormPanel
 		this.add(getFieldState(), null);
 		this.add(labelGpa, null);
 		this.add(getFieldGpa(), null);
-		this.add(labelYear, null);
-		this.add(getFieldYear(), null);
 		this.add(labelHoursTaken, null);
 		this.add(getFieldHoursTaken(), null);
+		this.add(labelHoursTaken, null);
+		this.add(getFieldHoursTaken(), null);
+	}
+	
+	private void addButton() {
 		this.add(fillerLabel, null);
 		this.add(getButtonSave(), null);
 	}
@@ -173,18 +178,6 @@ public class StudentFormPanel
 			fieldFirstName = new JTextField();
 		}
 		return fieldFirstName;
-	}
-
-	/**
-	 * This method initializes fieldYear	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
-	private JTextField getFieldYear() {
-		if (fieldYear == null) {
-			fieldYear = new JTextField();
-		}
-		return fieldYear;
 	}
 
 	/**
@@ -246,13 +239,21 @@ public class StudentFormPanel
 		}
 		return fieldState;
 	}
-
-	@Override
+	
 	/**
 	 * Responds to changes to the underlying student object and updates the view
 	 * accordingly.
 	 */
-	public void undergraduateStudentStateChanged(UndergraduateStudentEvent pe) {
+	@Override
+	public void stateChanged(ChangeEvent event) {
+		// Something about the state of the student has changed
+		updateFields();
+	}
+	
+	/**
+	 * Updates the fields to the values on the student being edited.
+	 */
+	public void updateFields() {
 		// Hydrate the view with the values from the underlying student
 		this.fieldStudentID.setText( Long.toString(student.getStudentID() ) );
 		this.fieldLastName.setText( student.getLastName() );
@@ -261,8 +262,42 @@ public class StudentFormPanel
 		this.fieldCity.setText( student.getCity() );
 		this.fieldState.setText( student.getState() );
 		this.fieldGpa.setText( Double.toString( student.getGpa() ) );
-		this.fieldYear.setText( student.getYear() );
 		this.fieldHoursTaken.setText( Integer.toString( student.getHoursTaken() ) );
+	}
+	
+	public void persistFields() {
+		// Push the values chosen in the view back to the student instance
+		
+		// Only attempt to change the ID if a valid one is provided
+		try {
+			long studentID = Long.parseLong( fieldStudentID.getText() );
+			student.setStudentID( studentID );
+		} catch (NumberFormatException exception) {
+			// Discard the value
+		}
+		
+		student.setLastName( fieldLastName.getText() );
+		student.setFirstName( fieldFirstName.getText() );
+		student.setAddress( fieldAddress.getText() );
+		student.setCity( fieldCity.getText() );
+		student.setState( fieldState.getText() );
+		
+		// Only attempt to change the GPA if a valid one is provided
+		try {
+			double gpa = Double.parseDouble( fieldGpa.getText() );
+			student.setGpa( gpa );
+		} catch (NumberFormatException exception) {
+			// Discard the value
+		}
+		
+		// Only attempt to change the number of hours taken 
+		// if a number is provided
+		try {
+			int hoursTaken = Integer.parseInt( fieldHoursTaken.getText() );
+			student.setHoursTaken( hoursTaken );
+		} catch (NumberFormatException exception) {
+			// Discard the value
+		}
 	}
 
 	/**
@@ -277,41 +312,9 @@ public class StudentFormPanel
 			buttonSave.setText("Save");
 			buttonSave.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					// Push the values chosen in the view back to the student instance
+					persistFields();
 					
-					// Only attempt to change the ID if a valid one is provided
-					try {
-						long studentID = Long.parseLong( fieldStudentID.getText() );
-						student.setStudentID( studentID );
-					} catch (NumberFormatException exception) {
-						// Discard the value
-					}
-					
-					student.setLastName( fieldLastName.getText() );
-					student.setFirstName( fieldFirstName.getText() );
-					student.setAddress( fieldAddress.getText() );
-					student.setCity( fieldCity.getText() );
-					student.setState( fieldState.getText() );
-					
-					// Only attempt to change the GPA if a valid one is provided
-					try {
-						double gpa = Double.parseDouble( fieldGpa.getText() );
-						student.setGpa( gpa );
-					} catch (NumberFormatException exception) {
-						// Discard the value
-					}
-					
-					student.setYear( fieldYear.getText() );
-					
-					// Only attempt to change the number of hours taken 
-					// if a number is provided
-					try {
-						int hoursTaken = Integer.parseInt( fieldHoursTaken.getText() );
-						student.setHoursTaken( hoursTaken );
-					} catch (NumberFormatException exception) {
-						// Discard the value
-					}
-					
+					// Notify listeners of the student that something has changed
 					student.update();
 				}
 			});
@@ -331,13 +334,26 @@ public class StudentFormPanel
 			}
 			
 			// Change our student reference
-			this.student = student;
+			this.student = (AbstractStudent)student;
 			
-			// Begin listening to the new database
+			// Begin listening to the new student
 			this.student.addChangeListener(this);
+			
+			// Fill in the view
+			updateFields();
+			
+			setRecursiveEnabled(true);
 		} else {
-			// TODO: Disable all fields
-			System.err.println("StudentFormPanel was assigned a null student and should blank.");
+			setRecursiveEnabled(false);
+			System.err.println("StudentFormPanel was assigned an invalid student.");
+		}
+	}
+	
+	public void setRecursiveEnabled(boolean enabled) {
+		setEnabled(enabled);
+		
+		for (Component component : getComponents()) {
+			component.setEnabled(enabled);
 		}
 	}
 	

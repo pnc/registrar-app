@@ -1,6 +1,7 @@
 package viewClasses;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import javax.swing.border.EtchedBorder;
 import javax.swing.event.ChangeEvent;
@@ -39,7 +41,10 @@ public class RegistrarAppFrame
 	private static final long serialVersionUID = 1L;
 	private JPanel jContentPane = null;
 
-	RegistrarApp application = null;
+	private RegistrarApp application = null;
+	
+	private CardLayout cardLayout = new CardLayout();
+	private JPanel editors = new JPanel();
     
 	private JMenuBar mainMenuBar = null;
 	private JMenu fileMenu = null;  //  @jve:decl-index=0:visual-constraint="-94,58"
@@ -49,7 +54,10 @@ public class RegistrarAppFrame
 	private JMenuItem menuItemExit = null;
 	private JRadioButtonMenuItem menuItemSortByIDNumber = null;
 	private JMenuItem menuItemOpen = null;
-	private StudentFormPanel studentFormPanel = null;
+	
+	private GraduateStudentFormPanel graduateStudentFormPanel = null;
+	private UndergraduateStudentFormPanel undergraduateStudentFormPanel = null;
+	
 	private StudentDatabasePanel studentDatabasePanel = null;
 	
 	
@@ -115,7 +123,14 @@ public class RegistrarAppFrame
 			jContentPane = new JPanel();
 			jContentPane.setLayout(new BorderLayout());
 			jContentPane.add(getStatusPanel(), BorderLayout.SOUTH);
-			jContentPane.add(getStudentFormPanel(), BorderLayout.NORTH);
+			
+			editors.setLayout(cardLayout);
+			editors.add( getGraduateStudentFormPanel(), "graduate" );
+			editors.add( getUndergraduateStudentFormPanel(), "undergraduate" );
+			cardLayout.show(editors, "undergraduate");
+			
+			jContentPane.add(editors, BorderLayout.NORTH);
+			
 			jContentPane.add(getStudentDatabasePanel(), BorderLayout.CENTER);
 		}
 		return jContentPane;
@@ -240,18 +255,12 @@ public class RegistrarAppFrame
 	private JMenuItem getMenuItemOpen() {
 		if (menuItemOpen == null) {
 			menuItemOpen = new JMenuItem();
-			menuItemOpen.setText("Open…");
+			menuItemOpen.setText("Open...");
 			menuItemOpen.setMnemonic(KeyEvent.VK_O);
 			menuItemOpen.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					// TODO: Actually open a browse window
-					try {
-						File f = new File(".");
-						System.out.println( f.getCanonicalPath() );
-					} catch (IOException error) {
-						
-					}
-					application.openDatabase("testCases/fixtures/students.txt");
+					application.openDatabase("test/fixtures/students.txt");
 				}
 			});
 		}
@@ -259,15 +268,29 @@ public class RegistrarAppFrame
 	}
 
 	/**
-	 * This method initializes studentFormPanel	
+	 * This method initializes graduateStudentFormPanel	
 	 * 	
 	 * @return viewClasses.StudentFormPanel	
 	 */
-	private StudentFormPanel getStudentFormPanel() {
-		if (studentFormPanel == null) {
-			studentFormPanel = new StudentFormPanel();
+	private StudentFormPanel getGraduateStudentFormPanel() {
+		if (graduateStudentFormPanel == null) {
+			graduateStudentFormPanel = new GraduateStudentFormPanel();
+			graduateStudentFormPanel.setVisible(false);
 		}
-		return studentFormPanel;
+		return graduateStudentFormPanel;
+	}
+	
+	/**
+	 * This method initializes undergraduateStudentFormPanel	
+	 * 	
+	 * @return viewClasses.StudentFormPanel	
+	 */
+	private StudentFormPanel getUndergraduateStudentFormPanel() {
+		if (undergraduateStudentFormPanel == null) {
+			undergraduateStudentFormPanel = new UndergraduateStudentFormPanel();
+			undergraduateStudentFormPanel.setVisible(true);
+		}
+		return undergraduateStudentFormPanel;
 	}
 
 	/**
@@ -294,8 +317,8 @@ public class RegistrarAppFrame
 							
 							if (selectedStudent != null) {
 								System.out.println( "Selected student: " + selectedStudent.toString() );
-								// Tell our StudentFormPanel to edit this one.
-								studentFormPanel.setStudent(selectedStudent);
+								
+								showEditorFor(selectedStudent);
 								// TODO: Don't change if dirty
 							}
 							
@@ -306,6 +329,24 @@ public class RegistrarAppFrame
 		}
 		
 		return studentDatabasePanel;
+	}
+	
+	/**
+	 * Display the appropriate editor for a given student and link
+	 * that editor to the student.
+	 * @param student The student to edit.
+	 */
+	private void showEditorFor(AbstractStudent student) {
+		graduateStudentFormPanel.setVisible(false);
+		undergraduateStudentFormPanel.setVisible(false);
+		// Tell our StudentFormPanel to edit this one.
+		if (student instanceof GraduateStudent) {
+			graduateStudentFormPanel.setStudent(student);
+			cardLayout.show(editors, "graduate");
+		} else if (student instanceof UndergraduateStudent) {
+			undergraduateStudentFormPanel.setStudent(student);
+			cardLayout.show(editors, "undergraduate");
+		}
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="10,10"

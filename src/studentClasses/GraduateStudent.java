@@ -57,6 +57,13 @@ public class GraduateStudent
 	}
 
 	/**
+	 * @return an user-displayable form of this type of student.
+	 */
+	public String getType() {
+		return "Graduate";
+	}
+	
+	/**
 	 * Setter of the property <tt>degree</tt>
 	 * @param year  The abbreviation of the degree the student aims to receive.
 	 * @uml.property  name="degree"

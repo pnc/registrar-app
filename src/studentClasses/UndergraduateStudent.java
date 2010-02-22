@@ -60,6 +60,13 @@ public class UndergraduateStudent
 	}
 	
 	/**
+	 * @return an user-displayable form of this type of student.
+	 */
+	public String getType() {
+		return "Undergraduate";
+	}
+	
+	/**
 	 * Returns a numerical value that represents what year the student is.
 	 * This can be used to sort the student in a list.
 	 * See <tt>StudentYearOrder</tt>.
@@ -76,60 +83,6 @@ public class UndergraduateStudent
 		
 		// Return the value of the student year order enum entry
 		return type.ordinal();
-	}
-	
-	/****************************************************************
-	 * Listener methods follow
-	 ****************************************************************/
-	
-	/**
-	 * Registers the given listener as wishing to receive notification when this
-	 * object changes state.
-	 * @param listener the listener who wishes to receive notifications
-	 */
-	public void addUndergraduateStudentListener(UndergraduateStudentListener listener) {
-		if(!listeners.contains(listener)) {
-			listeners.addElement(listener);
-		}
-	}
-
-	/**
-	 * Removes the given listener from receiving further notifications
-	 * about changes in state of the object.
-	 * @param listener the listener no longer interested in updates
-	 */
-	public void removeUndergraduateStudentListener(UndergraduateStudentListener listener) {
-		listeners.removeElement(listener);
-	}
-
-	/**
-	 * Notifies all listeners that a change has occurred to the state
-	 * of the object.
-	 */
-	@SuppressWarnings("unchecked")
-	private void notifyListeners() {
-		//create a copy to prevent modifications of the vector state from crashing the program
-		Vector<UndergraduateStudentListener> copyOfListeners = (Vector<UndergraduateStudentListener>)(listeners.clone());
-		String cp = new String(this.toString()); //Get Current State
-		UndergraduateStudentEvent event = new UndergraduateStudentEvent(this, cp);
-		Enumeration<UndergraduateStudentListener> enum1 = copyOfListeners.elements();
-		while(enum1.hasMoreElements()) {
-			UndergraduateStudentListener listener = enum1.nextElement();
-			listener.undergraduateStudentStateChanged(event);
-		}
-	}   
-
-	/**
-	 * Displays a list of all objects listening to this student in the console.
-	 */
-	@SuppressWarnings("unchecked")
-	public void showListeners(){
-		Vector<UndergraduateStudentListener> copyOfListeners = (Vector<UndergraduateStudentListener>)(listeners.clone());
-		Enumeration<UndergraduateStudentListener> listenerEnum = copyOfListeners.elements();
-		while(listenerEnum.hasMoreElements()) {
-			UndergraduateStudentListener listener = listenerEnum.nextElement();
-			System.out.println(listener.getClass());
-		}
 	}
 
 	/**
